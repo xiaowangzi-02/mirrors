@@ -1,5 +1,5 @@
 export function onRequest(context) {
-  const domain = "conda.anaconda.org";
+  const domain = "storage.googleapis.com";
   const url = new URL(context.request.url);
   url.hostname = domain;
   url.pathname = context.functionPath.split("/").slice(2).join("/");
