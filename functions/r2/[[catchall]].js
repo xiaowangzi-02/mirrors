@@ -32,6 +32,7 @@ export async function onRequestGet(context) {
   const headers = new Headers();
   object.writeHttpMetadata(headers);
   headers.set("etag", object.httpEtag);
+  headers.set("Accept-Ranges", "bytes");
 
   if (object.body === undefined) {
     return new Response(null, {
