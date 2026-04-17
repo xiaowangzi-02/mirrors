@@ -6,7 +6,7 @@ export async function onRequestPut(context) {
 
   try {
     // 2. Upload the request body (stream) to R2
-    await context.env.BUCKET.put(key, context.request.body, {
+    await context.env.BUCKET.put(path, context.request.body, {
       onlyIf: context.request.headers,
       httpMetadata: context.request.headers,
     });
